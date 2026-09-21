@@ -6,7 +6,7 @@ let timerValue = document.querySelector(".timerValue");
 let bubble = 49;
 let target;
 let score = 0;
-let timmer = 60;
+let timmer = 5;
 
 handleClick();
 generateBubble();
@@ -55,6 +55,7 @@ function restart() {
   target;
   score = 0;
   timmer = 60;
+  scoreValue.innerText = score;
   handleClick();
   generateBubble();
   generateTarget();
