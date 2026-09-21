@@ -8,9 +8,9 @@ let target;
 let score = 0;
 let timmer = 60;
 
-handleClick();
 generateBubble();
 generateTarget();
+handleClick();
 
 function generateBubble() {
   container.innerHTML = "";
@@ -52,13 +52,12 @@ function gameOver() {
 
 function restart() {
   bubble = 49;
-  target;
-  score = 0;
   timmer = 60;
+  score = 0;
   scoreValue.innerText = score;
-  handleClick();
-  generateBubble();
   generateTarget();
+  generateBubble();
+  handleClick();
 }
 
 setInterval(() => {
