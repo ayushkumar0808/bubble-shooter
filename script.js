@@ -11,7 +11,6 @@ let timmer = 60;
 handleClick();
 generateBubble();
 generateTarget();
-setTimer();
 
 function generateBubble() {
   container.innerHTML = "";
@@ -41,24 +40,13 @@ function generateTarget() {
   targetValue.innerText = target;
 }
 
-function setTimer() {
-  setInterval(() => {
-    if (timmer == -1) {
-      gameOver();
-      return;
-    }
-    timerValue.innerHTML = timmer;
-    timmer--;
-  }, 1000);
-}
-
 function gameOver() {
   container.innerHTML = `
-  <div class= "over">
+    <div class= "over">
     <div>Game Over</div>
     <div>Your Score:${score}</div>
     <button class="btn">Restart</button>
- </div>
+    </div>
     `;
 }
 
@@ -71,6 +59,15 @@ function restart() {
   generateBubble();
   generateTarget();
 }
+
+setInterval(() => {
+  if (timmer == -1) {
+    gameOver();
+    return;
+  }
+  timerValue.innerHTML = timmer;
+  timmer--;
+}, 1000);
 
 container.addEventListener("click", (e) => {
   if (e.target.className === "btn") {
