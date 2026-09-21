@@ -1,14 +1,17 @@
 let container = document.querySelector(".container");
 let targetValue = document.querySelector(".targetValue");
 let scoreValue = document.querySelector(".scoreValue");
+let timerValue = document.querySelector(".timerValue");
 
 let bubble = 49;
 let target;
 let score = 0;
+let timmer = 5;
 
 handleClick();
 generateBubble();
 generateTarget();
+setTimer();
 
 function generateBubble() {
   container.innerHTML = "";
@@ -39,5 +42,11 @@ function generateTarget() {
 }
 
 function setTimer() {
-  setInterval(() => {}, 1000);
+  setInterval(() => {
+    if (timmer == 0) {
+      return;
+    }
+    timmer--;
+    timerValue.innerHTML = timmer;
+  }, 1000);
 }
