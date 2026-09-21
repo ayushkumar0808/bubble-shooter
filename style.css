@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: blueviolet;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  font-size: x-large;
+  color: white;
+  font-weight: bold;
+}
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  max-width: 50rem;
+  margin: auto;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+.target {
+  height: 50px;
+  width: 50px;
+  background-color: blueviolet;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.target:active {
+  scale: 0.9;
+}
