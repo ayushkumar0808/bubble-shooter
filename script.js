@@ -72,7 +72,6 @@ setInterval(() => {
 
 container.addEventListener("click", (e) => {
   if (e.target.className === "btn") {
-    console.log("hi");
     restart();
   }
 });
