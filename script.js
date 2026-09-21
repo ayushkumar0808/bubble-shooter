@@ -6,7 +6,7 @@ let timerValue = document.querySelector(".timerValue");
 let bubble = 49;
 let target;
 let score = 0;
-let timmer = 5;
+let timmer = 60;
 
 handleClick();
 generateBubble();
@@ -43,10 +43,38 @@ function generateTarget() {
 
 function setTimer() {
   setInterval(() => {
-    if (timmer == 0) {
+    if (timmer == -1) {
+      gameOver();
       return;
     }
-    timmer--;
     timerValue.innerHTML = timmer;
+    timmer--;
   }, 1000);
 }
+
+function gameOver() {
+  container.innerHTML = `
+  <div class= "over">
+    <div>Game Over</div>
+    <div>Your Score:${score}</div>
+    <button class="btn">Restart</button>
+ </div>
+    `;
+}
+
+function restart() {
+  bubble = 49;
+  target;
+  score = 0;
+  timmer = 60;
+  handleClick();
+  generateBubble();
+  generateTarget();
+}
+
+container.addEventListener("click", (e) => {
+  if (e.target.className === "btn") {
+    console.log("hi");
+    restart();
+  }
+});
